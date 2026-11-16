@@ -1,0 +1,73 @@
+{
+ "ring_vs_control_b": {
+  "id": "ring_vs_control_b",
+  "n_zones_tested": 13,
+  "zone_ids": [
+   43,
+   88,
+   100,
+   125,
+   140,
+   141,
+   142,
+   143,
+   186,
+   209,
+   224,
+   237,
+   261
+  ],
+  "beta": -0.10716222590294122,
+  "se": 0.01636184550773825,
+  "effect_pct": -10.162007932559103,
+  "ci_low_pct": -12.99728438183141,
+  "ci_high_pct": -7.2343344530713445,
+  "n_treated": 13,
+  "n_control": 60,
+  "n_weeks": 195,
+  "n_obs": 14235,
+  "dropped_zones": []
+ },
+ "outer_ring_vs_control_b": {
+  "id": "outer_ring_vs_control_b",
+  "n_zones_tested": 8,
+  "zone_ids": [
+   24,
+   41,
+   151,
+   236,
+   238,
+   239,
+   262,
+   263
+  ],
+  "beta": -0.09087454851711364,
+  "se": 0.008715035144355657,
+  "effect_pct": -8.686774249012952,
+  "ci_low_pct": -10.233264094966376,
+  "ci_high_pct": -7.113641673773186,
+  "n_treated": 8,
+  "n_control": 60,
+  "n_weeks": 195,
+  "n_obs": 13260,
+  "dropped_zones": []
+ },
+ "main_without_outer_ring": {
+  "id": "main_without_ring2",
+  "beta": -0.11309016992341282,
+  "se": 0.007193980566206608,
+  "effect_pct": -10.69298715797803,
+  "ci_low_pct": -11.943375017826419,
+  "ci_high_pct": -9.424844020768363,
+  "n_treated": 30,
+  "n_control": 73,
+  "n_weeks": 195,
+  "n_obs": 20085,
+  "dropped_zones": []
+ },
+ "note": "Ring zones are all boundary zones (partly charged): the ring estimate mixes partial treatment with spillover. The outer ring (control-A zones touching the ring) is the clean test of contamination of control A.",
+ "commit": "966ffc8",
+ "dirty": true,
+ "generated_at_utc": "2026-11-16T20:44:13+00:00",
+ "command": "python -m congestion.spillover"
+}

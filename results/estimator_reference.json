@@ -1,0 +1,1562 @@
+{
+ "n_cases": 61,
+ "cases": [
+  {
+   "kind": "combo",
+   "input": {
+    "tripType": "YELLOW",
+    "control": "A",
+    "dropBoundary": true,
+    "outcome": "DROPOFFS",
+    "excludeZones": [],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.1706714066531407,
+    "se": 0.06008504810744029,
+    "effectPct": -15.690143546052916,
+    "ciLowPct": -25.056518531263585,
+    "ciHighPct": -5.153166680007859,
+    "nTreated": 30,
+    "nControl": 21,
+    "nWeeks": 195,
+    "nObs": 9945,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "combo",
+   "input": {
+    "tripType": "YELLOW",
+    "control": "A",
+    "dropBoundary": true,
+    "outcome": "PICKUPS",
+    "excludeZones": [],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.4643204826170931,
+    "se": 0.1422782863313009,
+    "effectPct": -37.143792103594734,
+    "ciLowPct": -52.440127719498065,
+    "ciHighPct": -16.927807378997784,
+    "nTreated": 30,
+    "nControl": 19,
+    "nWeeks": 195,
+    "nObs": 9555,
+    "droppedZones": [
+     128,
+     153
+    ]
+   }
+  },
+  {
+   "kind": "combo",
+   "input": {
+    "tripType": "YELLOW",
+    "control": "A",
+    "dropBoundary": false,
+    "outcome": "DROPOFFS",
+    "excludeZones": [],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.18250859720904222,
+    "se": 0.059215130515056794,
+    "effectPct": -16.682251910343304,
+    "ciLowPct": -25.812025698521513,
+    "ciHighPct": -6.428943341654936,
+    "nTreated": 43,
+    "nControl": 21,
+    "nWeeks": 195,
+    "nObs": 12480,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "combo",
+   "input": {
+    "tripType": "YELLOW",
+    "control": "A",
+    "dropBoundary": false,
+    "outcome": "PICKUPS",
+    "excludeZones": [],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.4838737980876964,
+    "se": 0.1386946676883336,
+    "effectPct": -38.36090132748583,
+    "ciLowPct": -53.03231395083423,
+    "ciHighPct": -19.106543141538868,
+    "nTreated": 43,
+    "nControl": 19,
+    "nWeeks": 195,
+    "nObs": 12090,
+    "droppedZones": [
+     128,
+     153
+    ]
+   }
+  },
+  {
+   "kind": "combo",
+   "input": {
+    "tripType": "YELLOW",
+    "control": "B",
+    "dropBoundary": true,
+    "outcome": "DROPOFFS",
+    "excludeZones": [],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.4750084148590756,
+    "se": 0.03795305786261248,
+    "effectPct": -37.81201765880735,
+    "ciLowPct": -42.27010532584762,
+    "ciHighPct": -33.00966216035679,
+    "nTreated": 30,
+    "nControl": 60,
+    "nWeeks": 195,
+    "nObs": 17550,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "combo",
+   "input": {
+    "tripType": "YELLOW",
+    "control": "B",
+    "dropBoundary": true,
+    "outcome": "PICKUPS",
+    "excludeZones": [],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -1.2104612601543534,
+    "se": 0.058284577642252755,
+    "effectPct": -70.19402353757617,
+    "ciLowPct": -73.41164726472886,
+    "ciHighPct": -66.58701493379662,
+    "nTreated": 30,
+    "nControl": 60,
+    "nWeeks": 195,
+    "nObs": 17550,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "combo",
+   "input": {
+    "tripType": "YELLOW",
+    "control": "B",
+    "dropBoundary": false,
+    "outcome": "DROPOFFS",
+    "excludeZones": [],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.4868456054150584,
+    "se": 0.03691373060476877,
+    "effectPct": -38.54380893487438,
+    "ciLowPct": -42.83310351630938,
+    "ciHighPct": -33.932683903686424,
+    "nTreated": 43,
+    "nControl": 60,
+    "nWeeks": 195,
+    "nObs": 20085,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "combo",
+   "input": {
+    "tripType": "YELLOW",
+    "control": "B",
+    "dropBoundary": false,
+    "outcome": "PICKUPS",
+    "excludeZones": [],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -1.2300145756249794,
+    "se": 0.050665986017039574,
+    "effectPct": -70.77116826350887,
+    "ciLowPct": -73.53423257748449,
+    "ciHighPct": -67.71963604753431,
+    "nTreated": 43,
+    "nControl": 60,
+    "nWeeks": 195,
+    "nObs": 20085,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "combo",
+   "input": {
+    "tripType": "YELLOW",
+    "control": "AB",
+    "dropBoundary": true,
+    "outcome": "DROPOFFS",
+    "excludeZones": [],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.39610622754645086,
+    "se": 0.037032900968402435,
+    "effectPct": -32.70647921156006,
+    "ciLowPct": -37.417805402337976,
+    "ciHighPct": -27.64047395242074,
+    "nTreated": 30,
+    "nControl": 81,
+    "nWeeks": 195,
+    "nObs": 21645,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "combo",
+   "input": {
+    "tripType": "YELLOW",
+    "control": "AB",
+    "dropBoundary": true,
+    "outcome": "PICKUPS",
+    "excludeZones": [],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -1.0310096807466758,
+    "se": 0.0721596384966212,
+    "effectPct": -64.3353320570296,
+    "ciLowPct": -69.03894226668757,
+    "ciHighPct": -58.91714842436502,
+    "nTreated": 30,
+    "nControl": 79,
+    "nWeeks": 195,
+    "nObs": 21255,
+    "droppedZones": [
+     128,
+     153
+    ]
+   }
+  },
+  {
+   "kind": "combo",
+   "input": {
+    "tripType": "YELLOW",
+    "control": "AB",
+    "dropBoundary": false,
+    "outcome": "DROPOFFS",
+    "excludeZones": [],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.407943418102394,
+    "se": 0.035990767835647995,
+    "effectPct": -33.49834943462777,
+    "ciLowPct": -38.027783778209255,
+    "ciHighPct": -28.63786713563039,
+    "nTreated": 43,
+    "nControl": 81,
+    "nWeeks": 195,
+    "nObs": 24180,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "combo",
+   "input": {
+    "tripType": "YELLOW",
+    "control": "AB",
+    "dropBoundary": false,
+    "outcome": "PICKUPS",
+    "excludeZones": [],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -1.050562996217204,
+    "se": 0.06617263965551161,
+    "effectPct": -65.02592090692934,
+    "ciLowPct": -69.28008322022394,
+    "ciHighPct": -60.182632746790986,
+    "nTreated": 43,
+    "nControl": 79,
+    "nWeeks": 195,
+    "nObs": 23790,
+    "droppedZones": [
+     128,
+     153
+    ]
+   }
+  },
+  {
+   "kind": "combo",
+   "input": {
+    "tripType": "FHVHV",
+    "control": "A",
+    "dropBoundary": true,
+    "outcome": "DROPOFFS",
+    "excludeZones": [],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.0885003982574768,
+    "se": 0.016407843050850572,
+    "effectPct": -8.469725379023718,
+    "ciLowPct": -11.366401058218278,
+    "ciHighPct": -5.478382100965796,
+    "nTreated": 30,
+    "nControl": 21,
+    "nWeeks": 195,
+    "nObs": 9945,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "combo",
+   "input": {
+    "tripType": "FHVHV",
+    "control": "A",
+    "dropBoundary": true,
+    "outcome": "PICKUPS",
+    "excludeZones": [],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.0896172026058901,
+    "se": 0.020223186217806763,
+    "effectPct": -8.571889728318393,
+    "ciLowPct": -12.124919452699034,
+    "ciHighPct": -4.875201299516574,
+    "nTreated": 30,
+    "nControl": 21,
+    "nWeeks": 195,
+    "nObs": 9945,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "combo",
+   "input": {
+    "tripType": "FHVHV",
+    "control": "A",
+    "dropBoundary": false,
+    "outcome": "DROPOFFS",
+    "excludeZones": [],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.08120571435435107,
+    "se": 0.016643250901961358,
+    "effectPct": -7.799599752367337,
+    "ciLowPct": -10.758667662207355,
+    "ciHighPct": -4.742414942368301,
+    "nTreated": 43,
+    "nControl": 21,
+    "nWeeks": 195,
+    "nObs": 12480,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "combo",
+   "input": {
+    "tripType": "FHVHV",
+    "control": "A",
+    "dropBoundary": false,
+    "outcome": "PICKUPS",
+    "excludeZones": [],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.08341565089130008,
+    "se": 0.019921525862684704,
+    "effectPct": -8.003131806300212,
+    "ciLowPct": -11.525970064900637,
+    "ciHighPct": -4.340021996767119,
+    "nTreated": 43,
+    "nControl": 21,
+    "nWeeks": 195,
+    "nObs": 12480,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "combo",
+   "input": {
+    "tripType": "FHVHV",
+    "control": "B",
+    "dropBoundary": true,
+    "outcome": "DROPOFFS",
+    "excludeZones": [],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.17677242386917424,
+    "se": 0.007876046096189776,
+    "effectPct": -16.2029535098832,
+    "ciLowPct": -17.486575985615282,
+    "ciHighPct": -14.899362323848687,
+    "nTreated": 30,
+    "nControl": 60,
+    "nWeeks": 195,
+    "nObs": 17550,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "combo",
+   "input": {
+    "tripType": "FHVHV",
+    "control": "B",
+    "dropBoundary": true,
+    "outcome": "PICKUPS",
+    "excludeZones": [],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.16967131007049494,
+    "se": 0.008759241261040976,
+    "effectPct": -15.605783369599246,
+    "ciLowPct": -17.042280158046708,
+    "ciHighPct": -14.144412186976629,
+    "nTreated": 30,
+    "nControl": 60,
+    "nWeeks": 195,
+    "nObs": 17550,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "combo",
+   "input": {
+    "tripType": "FHVHV",
+    "control": "B",
+    "dropBoundary": false,
+    "outcome": "DROPOFFS",
+    "excludeZones": [],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.16947773996608612,
+    "se": 0.008467158414058176,
+    "effectPct": -15.58944559107286,
+    "ciLowPct": -16.9787067164741,
+    "ciHighPct": -14.176936857760236,
+    "nTreated": 43,
+    "nControl": 60,
+    "nWeeks": 195,
+    "nObs": 20085,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "combo",
+   "input": {
+    "tripType": "FHVHV",
+    "control": "B",
+    "dropBoundary": false,
+    "outcome": "PICKUPS",
+    "excludeZones": [],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.16346975835594355,
+    "se": 0.008234387942247803,
+    "effectPct": -15.080782041909913,
+    "ciLowPct": -16.440301889848563,
+    "ciHighPct": -13.699142748129045,
+    "nTreated": 43,
+    "nControl": 60,
+    "nWeeks": 195,
+    "nObs": 20085,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "combo",
+   "input": {
+    "tripType": "FHVHV",
+    "control": "AB",
+    "dropBoundary": true,
+    "outcome": "DROPOFFS",
+    "excludeZones": [],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.1538870838957666,
+    "se": 0.009221720117801145,
+    "effectPct": -14.263117370632683,
+    "ciLowPct": -15.79882611434742,
+    "ciHighPct": -12.699399500243247,
+    "nTreated": 30,
+    "nControl": 81,
+    "nWeeks": 195,
+    "nObs": 21645,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "combo",
+   "input": {
+    "tripType": "FHVHV",
+    "control": "AB",
+    "dropBoundary": true,
+    "outcome": "PICKUPS",
+    "excludeZones": [],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.14891654146855648,
+    "se": 0.010185357778112851,
+    "effectPct": -13.835897680733666,
+    "ciLowPct": -15.538930679040941,
+    "ciHighPct": -12.098525531659753,
+    "nTreated": 30,
+    "nControl": 81,
+    "nWeeks": 195,
+    "nObs": 21645,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "combo",
+   "input": {
+    "tripType": "FHVHV",
+    "control": "AB",
+    "dropBoundary": false,
+    "outcome": "DROPOFFS",
+    "excludeZones": [],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.14659239999269638,
+    "se": 0.009730462849178435,
+    "effectPct": -13.635407222956974,
+    "ciLowPct": -15.266890432627312,
+    "ciHighPct": -11.972510821005288,
+    "nTreated": 43,
+    "nControl": 81,
+    "nWeeks": 195,
+    "nObs": 24180,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "combo",
+   "input": {
+    "tripType": "FHVHV",
+    "control": "AB",
+    "dropBoundary": false,
+    "outcome": "PICKUPS",
+    "excludeZones": [],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.14271498975402158,
+    "se": 0.009740167492400649,
+    "effectPct": -13.299886210720702,
+    "ciLowPct": -14.939325563383433,
+    "ciHighPct": -11.628848691115811,
+    "nTreated": 43,
+    "nControl": 81,
+    "nWeeks": 195,
+    "nObs": 24180,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "combo",
+   "input": {
+    "tripType": "ALL",
+    "control": "A",
+    "dropBoundary": true,
+    "outcome": "DROPOFFS",
+    "excludeZones": [],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.06359854657263152,
+    "se": 0.014002737941308727,
+    "effectPct": -6.161835955048467,
+    "ciLowPct": -8.702192108173623,
+    "ciHighPct": -3.5507945408668085,
+    "nTreated": 30,
+    "nControl": 21,
+    "nWeeks": 195,
+    "nObs": 9945,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "combo",
+   "input": {
+    "tripType": "ALL",
+    "control": "A",
+    "dropBoundary": true,
+    "outcome": "PICKUPS",
+    "excludeZones": [],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.07655606066571824,
+    "se": 0.01552458486230908,
+    "effectPct": -7.369901621660002,
+    "ciLowPct": -10.145967002326595,
+    "ciHighPct": -4.508068927711706,
+    "nTreated": 30,
+    "nControl": 21,
+    "nWeeks": 195,
+    "nObs": 9945,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "combo",
+   "input": {
+    "tripType": "ALL",
+    "control": "A",
+    "dropBoundary": false,
+    "outcome": "DROPOFFS",
+    "excludeZones": [],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.059990518716223504,
+    "se": 0.014309029968819232,
+    "effectPct": -5.822653723662774,
+    "ciLowPct": -8.42718172875162,
+    "ciHighPct": -3.144047337484923,
+    "nTreated": 43,
+    "nControl": 21,
+    "nWeeks": 195,
+    "nObs": 12480,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "combo",
+   "input": {
+    "tripType": "ALL",
+    "control": "A",
+    "dropBoundary": false,
+    "outcome": "PICKUPS",
+    "excludeZones": [],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.07408756524494915,
+    "se": 0.015323885952555627,
+    "effectPct": -7.1409621962790215,
+    "ciLowPct": -9.888449200224692,
+    "ciHighPct": -4.30970474592719,
+    "nTreated": 43,
+    "nControl": 21,
+    "nWeeks": 195,
+    "nObs": 12480,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "combo",
+   "input": {
+    "tripType": "ALL",
+    "control": "B",
+    "dropBoundary": true,
+    "outcome": "DROPOFFS",
+    "excludeZones": [],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.1190964718894879,
+    "se": 0.006803409404974638,
+    "effectPct": -11.227784360288828,
+    "ciLowPct": -12.403654705222689,
+    "ciHighPct": -10.036129440514063,
+    "nTreated": 30,
+    "nControl": 60,
+    "nWeeks": 195,
+    "nObs": 17550,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "combo",
+   "input": {
+    "tripType": "ALL",
+    "control": "B",
+    "dropBoundary": true,
+    "outcome": "PICKUPS",
+    "excludeZones": [],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.12080895794195769,
+    "se": 0.007459025157302959,
+    "effectPct": -11.37967544861379,
+    "ciLowPct": -12.66582893642071,
+    "ciHighPct": -10.074581026530494,
+    "nTreated": 30,
+    "nControl": 60,
+    "nWeeks": 195,
+    "nObs": 17550,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "combo",
+   "input": {
+    "tripType": "ALL",
+    "control": "B",
+    "dropBoundary": false,
+    "outcome": "DROPOFFS",
+    "excludeZones": [],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.11548844403312347,
+    "se": 0.007502565623470586,
+    "effectPct": -10.90691322548123,
+    "ciLowPct": -12.207420287783355,
+    "ciHighPct": -9.587141225018703,
+    "nTreated": 43,
+    "nControl": 60,
+    "nWeeks": 195,
+    "nObs": 20085,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "combo",
+   "input": {
+    "tripType": "ALL",
+    "control": "B",
+    "dropBoundary": false,
+    "outcome": "PICKUPS",
+    "excludeZones": [],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.1183404625212331,
+    "se": 0.007161386603819826,
+    "effectPct": -11.160646358342985,
+    "ciLowPct": -12.398890477508328,
+    "ciHighPct": -9.904899624119379,
+    "nTreated": 43,
+    "nControl": 60,
+    "nWeeks": 195,
+    "nObs": 20085,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "combo",
+   "input": {
+    "tripType": "ALL",
+    "control": "AB",
+    "dropBoundary": true,
+    "outcome": "DROPOFFS",
+    "excludeZones": [],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.1047081208814119,
+    "se": 0.00743863464971891,
+    "effectPct": -9.941265313104452,
+    "ciLowPct": -11.244747553589319,
+    "ciHighPct": -8.618639800481587,
+    "nTreated": 30,
+    "nControl": 81,
+    "nWeeks": 195,
+    "nObs": 21645,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "combo",
+   "input": {
+    "tripType": "ALL",
+    "control": "AB",
+    "dropBoundary": true,
+    "outcome": "PICKUPS",
+    "excludeZones": [],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.10933598457404232,
+    "se": 0.008015979235708024,
+    "effectPct": -10.357081948079571,
+    "ciLowPct": -11.754458718801786,
+    "ciHighPct": -8.937577579622612,
+    "nTreated": 30,
+    "nControl": 81,
+    "nWeeks": 195,
+    "nObs": 21645,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "combo",
+   "input": {
+    "tripType": "ALL",
+    "control": "AB",
+    "dropBoundary": false,
+    "outcome": "DROPOFFS",
+    "excludeZones": [],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.10110009302506029,
+    "se": 0.008082543562174192,
+    "effectPct": -9.615743997792258,
+    "ciLowPct": -11.036284225514503,
+    "ciHighPct": -8.172521100837848,
+    "nTreated": 43,
+    "nControl": 81,
+    "nWeeks": 195,
+    "nObs": 24180,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "combo",
+   "input": {
+    "tripType": "ALL",
+    "control": "AB",
+    "dropBoundary": false,
+    "outcome": "PICKUPS",
+    "excludeZones": [],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.10686748915332919,
+    "se": 0.007742956867779534,
+    "effectPct": -10.135525472300056,
+    "ciLowPct": -11.489005119059637,
+    "ciHighPct": -8.761348880978314,
+    "nTreated": 43,
+    "nControl": 81,
+    "nWeeks": 195,
+    "nObs": 24180,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "exclude",
+   "input": {
+    "tripType": "ALL",
+    "control": "AB",
+    "dropBoundary": true,
+    "outcome": "DROPOFFS",
+    "excludeZones": [
+     148,
+     167,
+     234
+    ],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.1063660273055301,
+    "se": 0.007551688047827973,
+    "effectPct": -10.090450566123588,
+    "ciLowPct": -11.411405233343174,
+    "ciHighPct": -8.74979899280175,
+    "nTreated": 28,
+    "nControl": 80,
+    "nWeeks": 195,
+    "nObs": 21060,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "exclude",
+   "input": {
+    "tripType": "ALL",
+    "control": "AB",
+    "dropBoundary": true,
+    "outcome": "DROPOFFS",
+    "excludeZones": [
+     7,
+     33,
+     51,
+     61,
+     129,
+     142,
+     162,
+     213,
+     224,
+     233
+    ],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.10380688668385796,
+    "se": 0.007785334033876549,
+    "effectPct": -9.860064716735117,
+    "ciLowPct": -11.225066922025807,
+    "ciHighPct": -8.474074255459929,
+    "nTreated": 28,
+    "nControl": 75,
+    "nWeeks": 195,
+    "nObs": 20085,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "exclude",
+   "input": {
+    "tripType": "ALL",
+    "control": "AB",
+    "dropBoundary": true,
+    "outcome": "DROPOFFS",
+    "excludeZones": [
+     92,
+     97,
+     113,
+     168,
+     211,
+     213,
+     238
+    ],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.10247221184146155,
+    "se": 0.007628880088328673,
+    "effectPct": -9.739676891387528,
+    "ciLowPct": -11.079239300805966,
+    "ciHighPct": -8.37993440889485,
+    "nTreated": 28,
+    "nControl": 76,
+    "nWeeks": 195,
+    "nObs": 20280,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "exclude",
+   "input": {
+    "tripType": "ALL",
+    "control": "AB",
+    "dropBoundary": true,
+    "outcome": "DROPOFFS",
+    "excludeZones": [
+     61,
+     75,
+     163
+    ],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.10599388364596121,
+    "se": 0.0076113936341775015,
+    "effectPct": -10.056985070767343,
+    "ciLowPct": -11.388801374367553,
+    "ciHighPct": -8.70515171859939,
+    "nTreated": 29,
+    "nControl": 79,
+    "nWeeks": 195,
+    "nObs": 21060,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "exclude",
+   "input": {
+    "tripType": "ALL",
+    "control": "AB",
+    "dropBoundary": true,
+    "outcome": "DROPOFFS",
+    "excludeZones": [
+     4,
+     41,
+     42,
+     43,
+     62,
+     95,
+     107,
+     213
+    ],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.10343201766832409,
+    "se": 0.007728941474433951,
+    "effectPct": -9.82626771360633,
+    "ciLowPct": -11.181965429198925,
+    "ciHighPct": -8.44987694502124,
+    "nTreated": 28,
+    "nControl": 76,
+    "nWeeks": 195,
+    "nObs": 20280,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "exclude",
+   "input": {
+    "tripType": "ALL",
+    "control": "AB",
+    "dropBoundary": true,
+    "outcome": "DROPOFFS",
+    "excludeZones": [
+     33,
+     80,
+     144,
+     244,
+     247
+    ],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.10469071641949158,
+    "se": 0.00766044402455191,
+    "effectPct": -9.939697875645848,
+    "ciLowPct": -11.281780403315123,
+    "ciHighPct": -8.577313029926636,
+    "nTreated": 29,
+    "nControl": 77,
+    "nWeeks": 195,
+    "nObs": 20670,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "exclude",
+   "input": {
+    "tripType": "ALL",
+    "control": "AB",
+    "dropBoundary": true,
+    "outcome": "DROPOFFS",
+    "excludeZones": [
+     62,
+     82,
+     90,
+     114,
+     164,
+     188
+    ],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.10166618380385212,
+    "se": 0.0077275207915920175,
+    "effectPct": -9.66689521218168,
+    "ciLowPct": -11.02474122947802,
+    "ciHighPct": -8.288327189328237,
+    "nTreated": 27,
+    "nControl": 78,
+    "nWeeks": 195,
+    "nObs": 20475,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "exclude",
+   "input": {
+    "tripType": "ALL",
+    "control": "AB",
+    "dropBoundary": true,
+    "outcome": "DROPOFFS",
+    "excludeZones": [
+     26
+    ],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.10489257202634353,
+    "se": 0.007487715580985019,
+    "effectPct": -9.957875217923473,
+    "ciLowPct": -11.269653042902029,
+    "ciHighPct": -8.626704241434568,
+    "nTreated": 30,
+    "nControl": 80,
+    "nWeeks": 195,
+    "nObs": 21450,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "exclude",
+   "input": {
+    "tripType": "ALL",
+    "control": "AB",
+    "dropBoundary": true,
+    "outcome": "DROPOFFS",
+    "excludeZones": [
+     50,
+     141,
+     159,
+     230
+    ],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.10243589468779724,
+    "se": 0.007522412522186202,
+    "effectPct": -9.73639883383891,
+    "ciLowPct": -11.057451957247988,
+    "ciHighPct": -8.395724264976856,
+    "nTreated": 28,
+    "nControl": 80,
+    "nWeeks": 195,
+    "nObs": 21060,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "exclude",
+   "input": {
+    "tripType": "ALL",
+    "control": "AB",
+    "dropBoundary": true,
+    "outcome": "DROPOFFS",
+    "excludeZones": [
+     24,
+     75,
+     79,
+     88,
+     163,
+     174,
+     232,
+     260
+    ],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.1047737098198409,
+    "se": 0.007894617013904348,
+    "effectPct": -9.947171976200831,
+    "ciLowPct": -11.329849459728415,
+    "ciHighPct": -8.54293371926973,
+    "nTreated": 27,
+    "nControl": 77,
+    "nWeeks": 195,
+    "nObs": 20280,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "exclude",
+   "input": {
+    "tripType": "ALL",
+    "control": "AB",
+    "dropBoundary": true,
+    "outcome": "DROPOFFS",
+    "excludeZones": [
+     13,
+     36,
+     41,
+     151,
+     177,
+     242,
+     261
+    ],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.10555303529842239,
+    "se": 0.007682691217543671,
+    "effectPct": -10.01732509988914,
+    "ciLowPct": -11.362115847005716,
+    "ciHighPct": -8.652131540015773,
+    "nTreated": 29,
+    "nControl": 76,
+    "nWeeks": 195,
+    "nObs": 20475,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "exclude",
+   "input": {
+    "tripType": "ALL",
+    "control": "AB",
+    "dropBoundary": true,
+    "outcome": "DROPOFFS",
+    "excludeZones": [
+     33,
+     79,
+     161
+    ],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.10421312682724902,
+    "se": 0.007707939964777327,
+    "effectPct": -9.896675740032679,
+    "ciLowPct": -11.247661754655436,
+    "ciHighPct": -8.52512504792886,
+    "nTreated": 28,
+    "nControl": 80,
+    "nWeeks": 195,
+    "nObs": 21060,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "exclude",
+   "input": {
+    "tripType": "ALL",
+    "control": "AB",
+    "dropBoundary": true,
+    "outcome": "DROPOFFS",
+    "excludeZones": [
+     42,
+     49,
+     71,
+     80,
+     140,
+     213,
+     235,
+     249
+    ],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.10568059329338933,
+    "se": 0.007784186648240353,
+    "effectPct": -10.028802377456337,
+    "ciLowPct": -11.391050097064348,
+    "ciHighPct": -8.645611865369574,
+    "nTreated": 29,
+    "nControl": 75,
+    "nWeeks": 195,
+    "nObs": 20280,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "exclude",
+   "input": {
+    "tripType": "ALL",
+    "control": "AB",
+    "dropBoundary": true,
+    "outcome": "DROPOFFS",
+    "excludeZones": [
+     140,
+     226
+    ],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.10448540824977687,
+    "se": 0.007486637271336473,
+    "effectPct": -9.921205861636917,
+    "ciLowPct": -11.233330300229284,
+    "ciHighPct": -8.589685961345083,
+    "nTreated": 30,
+    "nControl": 80,
+    "nWeeks": 195,
+    "nObs": 21450,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "exclude",
+   "input": {
+    "tripType": "ALL",
+    "control": "AB",
+    "dropBoundary": true,
+    "outcome": "DROPOFFS",
+    "excludeZones": [
+     72,
+     125,
+     129,
+     162,
+     241,
+     254
+    ],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.10433005010618612,
+    "se": 0.007692147918584529,
+    "effectPct": -9.90721030026862,
+    "ciLowPct": -11.255291592746664,
+    "ciHighPct": -8.53865090601139,
+    "nTreated": 29,
+    "nControl": 77,
+    "nWeeks": 195,
+    "nObs": 20670,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "exclude",
+   "input": {
+    "tripType": "ALL",
+    "control": "AB",
+    "dropBoundary": true,
+    "outcome": "DROPOFFS",
+    "excludeZones": [
+     88,
+     92,
+     100,
+     112,
+     166,
+     174
+    ],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.10324519080905513,
+    "se": 0.007545308054740599,
+    "effectPct": -9.8094192645923,
+    "ciLowPct": -11.133391624250189,
+    "ciHighPct": -8.465721804121229,
+    "nTreated": 30,
+    "nControl": 77,
+    "nWeeks": 195,
+    "nObs": 20865,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "exclude",
+   "input": {
+    "tripType": "ALL",
+    "control": "AB",
+    "dropBoundary": true,
+    "outcome": "DROPOFFS",
+    "excludeZones": [
+     13,
+     68,
+     76,
+     95,
+     128,
+     163,
+     235
+    ],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.10224703523109063,
+    "se": 0.007768667780204478,
+    "effectPct": -9.719350089304646,
+    "ciLowPct": -11.083578726439303,
+    "ciHighPct": -8.334190337897486,
+    "nTreated": 27,
+    "nControl": 77,
+    "nWeeks": 195,
+    "nObs": 20280,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "exclude",
+   "input": {
+    "tripType": "ALL",
+    "control": "AB",
+    "dropBoundary": true,
+    "outcome": "DROPOFFS",
+    "excludeZones": [
+     26,
+     33,
+     113,
+     125,
+     164,
+     197,
+     198,
+     225,
+     235,
+     247
+    ],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.10125655811429093,
+    "se": 0.0077811659457640734,
+    "effectPct": -9.62988487216725,
+    "ciLowPct": -10.99764564026927,
+    "ciHighPct": -8.241104777866315,
+    "nTreated": 28,
+    "nControl": 74,
+    "nWeeks": 195,
+    "nObs": 19890,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "exclude",
+   "input": {
+    "tripType": "ALL",
+    "control": "AB",
+    "dropBoundary": true,
+    "outcome": "DROPOFFS",
+    "excludeZones": [
+     42,
+     128,
+     152,
+     159,
+     213,
+     229,
+     234,
+     238,
+     260
+    ],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.10486967104808384,
+    "se": 0.0075921031947731995,
+    "effectPct": -9.955813141569692,
+    "ciLowPct": -11.285773437437175,
+    "ciHighPct": -8.605914731409614,
+    "nTreated": 28,
+    "nControl": 74,
+    "nWeeks": 195,
+    "nObs": 19890,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "exclude",
+   "input": {
+    "tripType": "ALL",
+    "control": "AB",
+    "dropBoundary": true,
+    "outcome": "DROPOFFS",
+    "excludeZones": [
+     33,
+     68,
+     113,
+     142
+    ],
+    "placeboStart": null
+   },
+   "expected": {
+    "beta": -0.10454998544825489,
+    "se": 0.007597336948557606,
+    "effectPct": -9.927022709984746,
+    "ciLowPct": -11.258318557053881,
+    "ciHighPct": -8.57575486550013,
+    "nTreated": 28,
+    "nControl": 80,
+    "nWeeks": 195,
+    "nObs": 21060,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "placebo",
+   "input": {
+    "tripType": "ALL",
+    "control": "AB",
+    "dropBoundary": true,
+    "outcome": "DROPOFFS",
+    "excludeZones": [],
+    "placeboStart": "2023-07-02"
+   },
+   "expected": {
+    "beta": -0.05718042681506437,
+    "se": 0.0076387121149767735,
+    "effectPct": -5.5576345358785755,
+    "ciLowPct": -6.961055967397966,
+    "ciHighPct": -4.1330435636369955,
+    "nTreated": 30,
+    "nControl": 81,
+    "nWeeks": 105,
+    "nObs": 11655,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "placebo",
+   "input": {
+    "tripType": "ALL",
+    "control": "AB",
+    "dropBoundary": true,
+    "outcome": "DROPOFFS",
+    "excludeZones": [],
+    "placeboStart": "2023-10-01"
+   },
+   "expected": {
+    "beta": -0.049576767051348315,
+    "se": 0.004507405539351892,
+    "effectPct": -4.836789865806768,
+    "ciLowPct": -5.673792578929238,
+    "ciHighPct": -3.9923600169928797,
+    "nTreated": 30,
+    "nControl": 81,
+    "nWeeks": 105,
+    "nObs": 11655,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "placebo",
+   "input": {
+    "tripType": "ALL",
+    "control": "AB",
+    "dropBoundary": true,
+    "outcome": "DROPOFFS",
+    "excludeZones": [],
+    "placeboStart": "2024-01-07"
+   },
+   "expected": {
+    "beta": -0.04871989213069457,
+    "se": 0.004688823756490328,
+    "effectPct": -4.7552119516309554,
+    "ciLowPct": -5.626494831948648,
+    "ciHighPct": -3.8758851414392614,
+    "nTreated": 30,
+    "nControl": 81,
+    "nWeeks": 105,
+    "nObs": 11655,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "placebo",
+   "input": {
+    "tripType": "ALL",
+    "control": "AB",
+    "dropBoundary": true,
+    "outcome": "DROPOFFS",
+    "excludeZones": [],
+    "placeboStart": "2024-04-07"
+   },
+   "expected": {
+    "beta": -0.04889449530011739,
+    "se": 0.006983540745795626,
+    "effectPct": -4.771840541750693,
+    "ciLowPct": -6.066395053797069,
+    "ciHighPct": -3.459445009064044,
+    "nTreated": 30,
+    "nControl": 81,
+    "nWeeks": 105,
+    "nObs": 11655,
+    "droppedZones": []
+   }
+  },
+  {
+   "kind": "placebo",
+   "input": {
+    "tripType": "ALL",
+    "control": "AB",
+    "dropBoundary": true,
+    "outcome": "DROPOFFS",
+    "excludeZones": [],
+    "placeboStart": "2024-08-04"
+   },
+   "expected": {
+    "beta": -0.04697112363221517,
+    "se": 0.004941171613511746,
+    "effectPct": -4.588505143325305,
+    "ciLowPct": -5.508059613051719,
+    "ciHighPct": -3.6600019694096098,
+    "nTreated": 30,
+    "nControl": 81,
+    "nWeeks": 105,
+    "nObs": 11655,
+    "droppedZones": []
+   }
+  }
+ ],
+ "reference": "statsmodels OLS, explicit zone and week dummies, cov_type=cluster",
+ "commit": "966ffc8",
+ "dirty": true,
+ "generated_at_utc": "2026-11-16T20:46:16+00:00",
+ "command": "python -m congestion.export"
+}

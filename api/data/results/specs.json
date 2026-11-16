@@ -1,0 +1,192 @@
+{
+ "specs": [
+  {
+   "id": "main",
+   "label": "Main (pre-registered)",
+   "case": {
+    "trip_type": "all",
+    "control": "AB",
+    "drop_boundary": true,
+    "outcome": "dropoffs",
+    "exclude": [],
+    "placebo_start": null,
+    "weighted": false
+   },
+   "beta": -0.1047081208814119,
+   "se": 0.00743863464971891,
+   "effect_pct": -9.941265313104452,
+   "ci_low_pct": -11.244747553589319,
+   "ci_high_pct": -8.618639800481587,
+   "n_treated": 30,
+   "n_control": 81,
+   "n_weeks": 195,
+   "n_obs": 21645,
+   "dropped_zones": []
+  },
+  {
+   "id": "control_a",
+   "label": "Control A only",
+   "case": {
+    "trip_type": "all",
+    "control": "A",
+    "drop_boundary": true,
+    "outcome": "dropoffs",
+    "exclude": [],
+    "placebo_start": null,
+    "weighted": false
+   },
+   "beta": -0.06359854657263152,
+   "se": 0.014002737941308727,
+   "effect_pct": -6.161835955048467,
+   "ci_low_pct": -8.702192108173623,
+   "ci_high_pct": -3.5507945408668085,
+   "n_treated": 30,
+   "n_control": 21,
+   "n_weeks": 195,
+   "n_obs": 9945,
+   "dropped_zones": []
+  },
+  {
+   "id": "control_b",
+   "label": "Control B only",
+   "case": {
+    "trip_type": "all",
+    "control": "B",
+    "drop_boundary": true,
+    "outcome": "dropoffs",
+    "exclude": [],
+    "placebo_start": null,
+    "weighted": false
+   },
+   "beta": -0.1190964718894879,
+   "se": 0.006803409404974638,
+   "effect_pct": -11.227784360288828,
+   "ci_low_pct": -12.403654705222689,
+   "ci_high_pct": -10.036129440514063,
+   "n_treated": 30,
+   "n_control": 60,
+   "n_weeks": 195,
+   "n_obs": 17550,
+   "dropped_zones": []
+  },
+  {
+   "id": "boundary_treated",
+   "label": "Boundary zones kept as treated",
+   "case": {
+    "trip_type": "all",
+    "control": "AB",
+    "drop_boundary": false,
+    "outcome": "dropoffs",
+    "exclude": [],
+    "placebo_start": null,
+    "weighted": false
+   },
+   "beta": -0.10110009302506029,
+   "se": 0.008082543562174192,
+   "effect_pct": -9.615743997792258,
+   "ci_low_pct": -11.036284225514503,
+   "ci_high_pct": -8.172521100837848,
+   "n_treated": 43,
+   "n_control": 81,
+   "n_weeks": 195,
+   "n_obs": 24180,
+   "dropped_zones": []
+  },
+  {
+   "id": "pickups",
+   "label": "Outcome = pickups",
+   "case": {
+    "trip_type": "all",
+    "control": "AB",
+    "drop_boundary": true,
+    "outcome": "pickups",
+    "exclude": [],
+    "placebo_start": null,
+    "weighted": false
+   },
+   "beta": -0.10933598457404232,
+   "se": 0.008015979235708024,
+   "effect_pct": -10.357081948079571,
+   "ci_low_pct": -11.754458718801786,
+   "ci_high_pct": -8.937577579622612,
+   "n_treated": 30,
+   "n_control": 81,
+   "n_weeks": 195,
+   "n_obs": 21645,
+   "dropped_zones": []
+  },
+  {
+   "id": "yellow",
+   "label": "Yellow only ($0.75)",
+   "case": {
+    "trip_type": "yellow",
+    "control": "AB",
+    "drop_boundary": true,
+    "outcome": "dropoffs",
+    "exclude": [],
+    "placebo_start": null,
+    "weighted": false
+   },
+   "beta": -0.39610622754645086,
+   "se": 0.037032900968402435,
+   "effect_pct": -32.70647921156006,
+   "ci_low_pct": -37.417805402337976,
+   "ci_high_pct": -27.64047395242074,
+   "n_treated": 30,
+   "n_control": 81,
+   "n_weeks": 195,
+   "n_obs": 21645,
+   "dropped_zones": []
+  },
+  {
+   "id": "fhvhv",
+   "label": "fhvhv only ($1.50)",
+   "case": {
+    "trip_type": "fhvhv",
+    "control": "AB",
+    "drop_boundary": true,
+    "outcome": "dropoffs",
+    "exclude": [],
+    "placebo_start": null,
+    "weighted": false
+   },
+   "beta": -0.1538870838957666,
+   "se": 0.009221720117801145,
+   "effect_pct": -14.263117370632683,
+   "ci_low_pct": -15.79882611434742,
+   "ci_high_pct": -12.699399500243247,
+   "n_treated": 30,
+   "n_control": 81,
+   "n_weeks": 195,
+   "n_obs": 21645,
+   "dropped_zones": []
+  },
+  {
+   "id": "weighted",
+   "label": "Weighted by 2024 zone volume (WLS)",
+   "case": {
+    "trip_type": "all",
+    "control": "AB",
+    "drop_boundary": true,
+    "outcome": "dropoffs",
+    "exclude": [],
+    "placebo_start": null,
+    "weighted": true
+   },
+   "beta": -0.09768472937374759,
+   "se": 0.007507958097331057,
+   "effect_pct": -9.306521141522461,
+   "ci_low_pct": -10.631333948753385,
+   "ci_high_pct": -7.962069135769823,
+   "n_treated": 30,
+   "n_control": 81,
+   "n_weeks": 195,
+   "n_obs": 21645,
+   "dropped_zones": []
+  }
+ ],
+ "commit": "966ffc8",
+ "dirty": true,
+ "generated_at_utc": "2026-11-16T20:44:10+00:00",
+ "command": "python -m congestion.specs"
+}

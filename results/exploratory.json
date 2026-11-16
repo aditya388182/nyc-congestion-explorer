@@ -1,0 +1,34 @@
+{
+ "note": "Post hoc: added after the pre-registered estimates showed a pre-trend. Not a replacement for the main specification.",
+ "trend_adjusted": {
+  "label": "Main DiD + treated-specific linear trend (post hoc)",
+  "beta": 0.024489301439452223,
+  "se": 0.005731256693705861,
+  "effect_pct": 2.479162725327688,
+  "ci_low_pct": 1.3344498284902917,
+  "ci_high_pct": 3.636806739059728,
+  "trend_per_month_pct": -0.574525894807365,
+  "trend_se": 0.0004358642038024754,
+  "n_obs": 21645,
+  "n_weeks": 195,
+  "n_treated": 30,
+  "n_control": 81
+ },
+ "short_window_52_52": {
+  "label": "Main DiD, 52 weeks before vs 52 weeks after (post hoc)",
+  "beta": -0.043018604953682676,
+  "se": 0.0045518571439763485,
+  "effect_pct": -4.21064316642269,
+  "ci_low_pct": -5.061424863422658,
+  "ci_high_pct": -3.3522372819424606,
+  "n_treated": 30,
+  "n_control": 81,
+  "n_weeks": 104,
+  "n_obs": 11544,
+  "dropped_zones": []
+ },
+ "commit": "966ffc8",
+ "dirty": true,
+ "generated_at_utc": "2026-11-16T20:45:00+00:00",
+ "command": "python -m congestion.exploratory"
+}

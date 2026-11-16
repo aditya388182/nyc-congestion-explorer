@@ -49,3 +49,17 @@ Check output (`results/planted.json`, seeds 0-19, 111 zones: 30 treated, 81 cont
 Bugs found by running: the over-sized lead test (above). Not a bug: both implementations agree to 1e-13.
 Interview notes: why simulate before real data; bias vs coverage; what "size" and "power" mean for a test; why 23 restrictions with few clusters over-reject; why independent AR(1) errors make the simulation optimistic; alternating projections vs explicit dummies.
 What's next: Phase 4: real estimates (main, event study x 9, placebos, 8 specs, spillover, headline.json, figures, export, estimator_reference.json).
+
+## Phase 4: real estimates: DONE
+Done: `specs.py` (one `run_case` for main, 8-row table, placebos, spillover and the 61 reference cases), `placebo.py`, `spillover.py`, `estimates.py` (9 event studies, figures, headline.json), `exploratory.py` (post hoc, labelled), `export.py` (api/data/panel.bin + meta + zones.geojson + results copies; results/estimator_reference.json with 61 statsmodels cases), `run_study.py`.
+Check output (everything below is copied from results/*.json by code, see headline.json / specs.csv):
+- **Main (pre-registered)**: -9.94% (95% CI -11.24 to -8.62), 30 treated, 81 control zones, 195 weeks, 21,645 obs, zone-clustered SE 0.0074 (log points).
+- **Pre-trend**: joint lead test chi2 = 953.4 (df 23), p = 1.1e-186; F = 41.45, p = 9.3e-44. Slope test: treated zones drift -0.45%/month relative to control before the toll (p = 3e-24). Because the joint test is over-sized (D13) the slope test is the better-calibrated evidence; both reject. **Parallel trends fails.** Event-study figure: reports/figures/event_study.png.
+- **Placebos**: 2024-01-05 start -4.76% (CI -5.63 to -3.88); 2024-06-30 start -4.88% (CI -6.10 to -3.64). Both nonzero, consistent with the pre-trend.
+- **Robustness (8 rows)**: -6.16% (control A) to -32.71% (yellow). Control B -11.23; boundary treated -9.62; pickups -10.36; fhvhv -14.26; WLS -9.31. Dose check: yellow ($0.75) -32.7% vs fhvhv ($1.50) -14.3%: larger effect for the LOWER fee, i.e. does not support a dose-response story.
+- **Spillover**: ring (all boundary zones) vs control B -10.16%; outer ring (8 control-A zones touching the ring) vs control B -8.69%; main without outer-ring zones -10.69%. Control A zones next to the zone fell about as much as the treated zones relative to B: either spillover/contamination or a shared trend; this design cannot separate them.
+- **Post hoc (not pre-registered)**: with a treated-specific linear trend the toll coefficient is +2.48% (CI +1.33 to +3.64); 52-weeks-before vs 52-weeks-after window -4.21% (CI -5.06 to -3.35). The estimate depends heavily on how the pre-trend is treated: the data do not support a clean, robust causal estimate.
+- Export: panel.bin 1,651,648 bytes (sha256 in meta), 61 reference cases (36 + 20 + 5). pytest: 24 passed.
+Honesty notes: main spec, thresholds, planted criteria untouched; D14 documents the post-hoc additions.
+Interview notes: why the main result is -9.9% but should not be read as causal; what a pre-trend means for DiD; why the placebo and slope tests agree; why the dose check matters (and failing it is evidence); spillover and the contaminated-control story; what the planted-effect test does and does not prove (it assumes parallel trends).
+What's next: Phase 5: the TypeScript GraphQL API (estimator port + equivalence against estimator_reference.json, properties, DataLoader, limits, handler, benchmark).

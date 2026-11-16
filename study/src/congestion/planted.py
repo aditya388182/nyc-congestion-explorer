@@ -163,7 +163,7 @@ def run(n_seeds: int = N_SEEDS) -> dict[str, object]:
     return out
 
 
-if __name__ == "__main__":
+def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--seeds", type=int, default=N_SEEDS)
     ap.add_argument("--out", default=str(RESULTS / "planted.json"))
@@ -176,3 +176,7 @@ if __name__ == "__main__":
             "null_reject_F", "null_reject_chi2", "slope_trend_reject", "slope_null_reject", "size_200_seeds", "pass_bias", "pass_coverage", "pass_trend_power",
             "parameters", "runtime_s"]  # fmt: skip
     print(json.dumps({k: res[k] for k in keys}, indent=1))
+
+
+if __name__ == "__main__":
+    main()

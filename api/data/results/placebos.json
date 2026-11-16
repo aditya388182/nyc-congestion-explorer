@@ -1,0 +1,54 @@
+{
+ "placebos": [
+  {
+   "id": "placebo_2024-01-05",
+   "label": "Placebo start 2024-01-05",
+   "case": {
+    "trip_type": "all",
+    "control": "AB",
+    "drop_boundary": true,
+    "outcome": "dropoffs",
+    "exclude": [],
+    "placebo_start": "2024-01-05",
+    "weighted": false
+   },
+   "beta": -0.04871989213069457,
+   "se": 0.004688823756490328,
+   "effect_pct": -4.7552119516309554,
+   "ci_low_pct": -5.626494831948648,
+   "ci_high_pct": -3.8758851414392614,
+   "n_treated": 30,
+   "n_control": 81,
+   "n_weeks": 105,
+   "n_obs": 11655,
+   "dropped_zones": []
+  },
+  {
+   "id": "placebo_2024-06-30",
+   "label": "Placebo start 2024-06-30",
+   "case": {
+    "trip_type": "all",
+    "control": "AB",
+    "drop_boundary": true,
+    "outcome": "dropoffs",
+    "exclude": [],
+    "placebo_start": "2024-06-30",
+    "weighted": false
+   },
+   "beta": -0.05003423580998405,
+   "se": 0.006599243960124415,
+   "effect_pct": -4.880314105165729,
+   "ci_low_pct": -6.10269644280711,
+   "ci_high_pct": -3.6420184396355637,
+   "n_treated": 30,
+   "n_control": 81,
+   "n_weeks": 105,
+   "n_obs": 11655,
+   "dropped_zones": []
+  }
+ ],
+ "commit": "966ffc8",
+ "dirty": true,
+ "generated_at_utc": "2026-11-16T20:44:11+00:00",
+ "command": "python -m congestion.placebo"
+}
