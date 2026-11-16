@@ -37,3 +37,15 @@ Check output:
 Bugs found by running: (1) January 2025 contains 4 pre-toll days so all-of-2025 intra-zone shares were biased down (Times Sq 0.945 < 0.95); classification now uses Feb-Dec 2025, thresholds untouched, no estimate seen (DECISIONS D9). (2) The ring is entirely boundary zones, so the spec's spillover design is mixed; an outer ring was pre-registered (D10).
 Interview notes: why treated zones come from fee shares; what boundary zones are; why the ring is not clean; why a dense grid is needed for LAG(52); why weeks start Sunday; ST_Touches vs tolerance (same set).
 What's next: Phase 3 (planted-effect simulation) before any real estimate. Needs did.py (the reference estimator) first.
+
+## Phase 3: planted-effect simulation: DONE (committed before any real estimate was computed)
+Done: `did.py` (reference TWFE = statsmodels explicit dummies + cluster; `twfe_demeaned` = the alternating-projection algorithm the TS port will use; they agree to 1e-8 in tests incl. unbalanced panels), `event_study.py` (joint lead Wald test, chi2 and F forms, plus a supplementary 1-df slope test), `planted.py`, `groups.py`; design fixed in DECISIONS D12/D13 before running.
+Check output (`results/planted.json`, seeds 0-19, 111 zones: 30 treated, 81 control, 195 weeks, rho 0.505):
+- planted -8%: mean estimate -7.93%, **bias 0.066 pp** (pass: < 1 pp); sd of estimates 0.45 pp; **CI coverage 19/20** (pass: >= 17/20)
+- planted 0.5%/month pre-trend: joint lead test (F form) rejects at 5% in **20/20** seeds (pass: >= 18/20); slope test 20/20
+- size (no planted anything): joint test rejects **18/20** (F form) in the 20 seeds, **0.595** (F) and **0.64** (chi2) over 200 further seeds; the slope test 2/20 and **0.07** over 200 seeds
+- Interpretation: the pass criteria are met, but the pre-registered joint lead test is badly over-sized here (23 lead coefficients, only 30 informative treated clusters), so its power result is nearly vacuous and a rejection on real data would carry little information. Recorded in D13; a 1-df slope test (size 0.07) is reported alongside it. Not tuned: thresholds untouched.
+- pytest: 21 passed (incl. planted fast mode with 5 seeds).
+Bugs found by running: the over-sized lead test (above). Not a bug: both implementations agree to 1e-13.
+Interview notes: why simulate before real data; bias vs coverage; what "size" and "power" mean for a test; why 23 restrictions with few clusters over-reject; why independent AR(1) errors make the simulation optimistic; alternating projections vs explicit dummies.
+What's next: Phase 4: real estimates (main, event study x 9, placebos, 8 specs, spillover, headline.json, figures, export, estimator_reference.json).
