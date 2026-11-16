@@ -79,3 +79,11 @@ Because of that, two **post-hoc** (not pre-registered, labelled as such everywhe
 - **Map readiness** is the MapLibre `idle` event (data drawn), exposed as `data-ready` on the status line; `?e2e=1` also exposes the map object on `window` so Playwright can click a real lon/lat. It is only a test hook.
 - **Accessibility**: the canvas map is not keyboard-operable, so a labelled zone list drives the same panel; scrollable tables are focusable regions; axe (WCAG 2.1 A and AA) is clean on all pages at desktop and 390 px width, including with the zone panel and an error shown.
 - **Honest presentation**: the Estimate page shows a "read with care" box computed from the served pre-trend slope (not typed), and the Data & Method page states the over-sized lead test. ESLint: type-aware rules are disabled inside `.vue` files (vue-tsc checks them) and the stylistic Vue rules are not used.
+
+## D17. Infrastructure choices (Phase 7)
+- cdk-nag is v3 (native `Validations` API): each finding is acknowledged individually with a written reason in `infra/lib/nag.ts`; the test `synthesises with zero unacknowledged AwsSolutions findings` runs the rule pack through `app.synth()`.
+- The stack has no `env`, so `cdk synth` and the tests need no AWS account; `Source.asset(web/dist)` needs the web build (tests use a temp folder).
+- The Lambda bundle is created by `NodejsFunction` with the local esbuild (ESM, minified, source map): the weekly panel (1.6 MB), zone shapes, results JSON and the GraphQL schema are copied next to `index.mjs`; the loader looks in `./data`.
+- No reserved concurrency (SPEC decision 4); throttling (20/s, burst 40) is on the `$default` stage. `S3BucketOrigin.withOriginAccessControl` makes the OAC and the bucket policy that lets only this distribution read.
+- Acknowledged on purpose: no WAF, geo restriction, CloudFront or API access logs, no authorizer (public read-only API), default CloudFront certificate (TLSv1 floor; a custom domain would fix it), and CDK helper-function IAM wildcards. Reasons are in `infra/lib/nag.ts`.
+- `make smoke` is `congestion.smoke`, tested only against a mock transport; the autopilot never runs it.

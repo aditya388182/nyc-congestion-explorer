@@ -1,0 +1,39 @@
+{
+ "pytest": {
+  "total": 24,
+  "passed": 24,
+  "failed": 0,
+  "exit": 0
+ },
+ "vitest_api": {
+  "total": 37,
+  "passed": 37,
+  "failed": 0,
+  "exit": 0
+ },
+ "vitest_web": {
+  "total": 21,
+  "passed": 21,
+  "failed": 0,
+  "exit": 0
+ },
+ "vitest_infra": {
+  "total": 13,
+  "passed": 13,
+  "failed": 0,
+  "exit": 0
+ },
+ "playwright": {
+  "total": 28,
+  "passed": 22,
+  "failed": 0,
+  "skipped": 6,
+  "exit": 0
+ },
+ "vitest_total": 71,
+ "vitest_passed": 71,
+ "commit": "53cd1ed",
+ "dirty": true,
+ "generated_at_utc": "2026-11-16T21:14:09+00:00",
+ "command": "python -m congestion.test_report"
+}

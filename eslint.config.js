@@ -10,7 +10,7 @@ export default tseslint.config(
   {
     languageOptions: {
       parserOptions: {
-        projectService: { allowDefaultProject: ["*.js", "*.mjs"] },
+        projectService: { allowDefaultProject: ["*.js", "*.mjs", "infra/*.mts", "web/scripts/*.mjs"] },
         tsconfigRootDir: import.meta.dirname,
         extraFileExtensions: [".vue"],
       },

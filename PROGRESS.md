@@ -85,3 +85,15 @@ Check output:
 Bugs found by running: urql GET blocked by Apollo CSRF (400); MapLibre 6 worker not bundled by Vite; `data-ready` fired before the zones were drawn so clicks hit nothing (now the `idle` event); phone horizontal overflow from a long select; axe `scrollable-region-focusable` on tables.
 Interview notes: why Pinia + a thin typed query helper; why the map needs a keyboard alternative; how codegen keeps the client and server in sync (`make contract`); why POST not GET (CSRF protection); why CloudFront same-origin means no CORS; how the colour scale is tested (monotone, saturating).
 What's next: Phase 7: infrastructure (CDK stack, cdk-nag, assertion tests, CI) and `make test` runner writing results/tests.json.
+
+## Phase 7: infrastructure and CI: DONE
+Done: `infra/` CDK v2 stack (Lambda nodejs24.x arm64 1,024 MB 10 s with the panel bundled, log group 2 weeks, HTTP API with `POST/GET /graphql` throttled 20/s burst 40, private S3 bucket with block public access and TLS enforcement, CloudFront with OAC for the site, `/graphql` to the HTTP API with caching disabled, all methods, HTTPS only, SPA fallback, security-headers policy with CSP and HSTS, BucketDeployment with invalidation), cdk-nag AwsSolutions v3 with 17 reasoned acknowledgements, 13 assertion tests, `.github/workflows/ci.yml` (study, node, contract, e2e), `make test` (writes results/tests.json), `congestion.smoke` for Phase 9, BLOCKERS.md with the exact Phase 9 steps.
+Check output:
+- `cdk synth`: 24 resources (3 IAM roles, 3 Lambda functions of which one is the API, 1 HTTP API with 2 routes, 1 S3 bucket, 1 distribution, 1 OAC, 1 response-headers policy, 1 deployment); outputs SiteUrl and ApiEndpoint; **cdk-nag: zero unacknowledged findings** (the Validations plugin would fail the synth otherwise).
+- Infra Vitest: 13 passed (runtime/arch/memory/timeout/no reserved concurrency, log retention, bundle contents, routes, throttling, public access block, TLS policy, OAC, /graphql behavior, SPA fallback, security headers, deployment).
+- `actionlint .github/workflows/ci.yml`: clean.
+- Every CI job's commands run locally: study (`uv sync --frozen`, ruff check and format check, pytest: 24 passed), node (eslint, tsc api/infra, vue-tsc, Vitest api 37 / web 21 / infra 13), contract (`make contract`: no diff), e2e (Playwright 22 passed).
+- `make test` (results/tests.json): pytest 24, Vitest 71, Playwright 22.
+Bugs found by running: cdk-nag v3 changed its API (no `NagSuppressions`); wrong managed-policy ID typed from memory in my first test (now read from the CDK constants); CloudFront ignores a minimum TLS version without a custom certificate (warning, removed).
+Interview notes: why CloudFront fronts both site and API (same origin, no CORS); OAC vs OAI; why API Gateway throttling not reserved concurrency; why bundle the panel (cold-start load, no DB); what each cdk-nag acknowledgement means; arm64 and Node 24 choices.
+What's next: Phase 8: memo (2 pages, number-checked), README, demo GIF, make results/readme/bullets, subagent review against SPEC 15, DONE.md.

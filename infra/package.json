@@ -1,1 +1,26 @@
-{"name":"@congestion/infra","private":true,"version":"0.1.0","dependencies":{"aws-cdk-lib":"2.277.0","cdk-nag":"3.0.2","constructs":"10.8.1"},"devDependencies":{"@types/node":"24.19.2","aws-cdk":"2.1148.1","esbuild":"0.28.2","eslint":"10.15.0","tsx":"4.23.15","typescript":"6.0.3","typescript-eslint":"8.73.0","vitest":"5.1.0"}}
+{
+  "name": "@congestion/infra",
+  "private": true,
+  "version": "0.1.0",
+  "dependencies": {
+    "aws-cdk-lib": "2.277.0",
+    "cdk-nag": "3.0.2",
+    "constructs": "10.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "aws-cdk": "2.1148.1",
+    "esbuild": "0.28.2",
+    "eslint": "10.15.0",
+    "tsx": "4.23.15",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.73.0",
+    "vitest": "5.1.0"
+  },
+  "scripts": {
+    "synth": "cdk synth --quiet",
+    "deploy": "cdk deploy",
+    "test": "vitest run",
+    "lint": "eslint ."
+  }
+}

@@ -70,7 +70,8 @@ memo: ## Fill reports/memo.md from results/*.json and render memo.pdf
 bullets: ## Print resume bullets from results/*.json (MISSING for absent keys)
 	$(UV) python -m congestion.bullets
 
-deploy: ## FOR THE OWNER ONLY (Phase 9): cdk deploy
+deploy: ## FOR THE OWNER ONLY (Phase 9): build the web app, then cdk deploy
+	npm run -w web build
 	npm run -w infra deploy
 
 smoke: ## FOR THE OWNER ONLY: make smoke URL=https://...

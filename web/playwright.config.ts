@@ -5,6 +5,7 @@ export default defineConfig({
   testDir: "e2e",
   timeout: 60_000,
   expect: { timeout: 15_000 },
+  testIgnore: process.env["SCREENSHOTS"] ? [] : ["**/screenshots.spec.ts"],
   fullyParallel: false,
   workers: 1,
   retries: 0,
