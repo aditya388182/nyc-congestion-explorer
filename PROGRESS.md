@@ -25,3 +25,15 @@ Check output (from data/manifest.csv; every figure is code output):
 - pytest: 7 passed (exclusion order, boundaries 59 s / 60 s / 4 h, NULL fee/refund, no-fee-column file, manifest upsert)
 Interview notes: why reconcile (a silent filter is the classic DE bug); why NULL timestamps need explicit handling (SQL three-valued logic); why aggregate per file then delete (25 GB through, 15 MB kept); restartable manifest; `do` is a reserved word (the first run failed).
 What's next: Phase 2: zones (intra-zone fee share), fee-jump plot, groups, ring via DuckDB spatial, GeoJSON, panel.sql + fixture test.
+
+## Phase 2: zones and the weekly panel: DONE
+Done: `zones.py` (intra-zone fee share classification, Manhattan cross-check that raises on a non-Manhattan treated zone, Control A/B, ring via DuckDB spatial, WGS84 GeoJSON with axis-order check, fee-jump plot, group map, zone table), `sql/zones.sql`, `sql/panel.sql` (dense Sunday-week panel, `LAG(52)`, 4-week rolling mean, pre-period rank, 52-week change), `panel.py`, fixture tests.
+Check output:
+- Groups (results/zones.json): treated 30, boundary 13, too-few/unclassified 15 (incl. 264/265), control A 21, control B 60, other 126; ring 14 (all boundary or unclassified), outer ring 8. Full named tables: `reports/zone_table.md`.
+- Fee jump (reports/figures/fee_jump.png): share of dropoffs into treated zones with fee > 0 is 2.1e-05 on 4 Jan 2025 and 0.951 on 5 Jan 2025; first day above 20% = 2025-01-05. 
+- CRS check: zone 230 (Times Sq) centroid lon -73.984, lat 40.760 (correct axis order). Static map: reports/figures/zone_groups.png.
+- Real panel: 408,720 rows, 195 complete weeks 2023-01-01 to 2026-09-20 (week start dates; last complete week starts Sunday 20 Sep 2026).
+- pytest: 15 passed (aggregate, manifest, panel fixture with Sunday boundary and LAG(52) across a year gap, zone thresholds).
+Bugs found by running: (1) January 2025 contains 4 pre-toll days so all-of-2025 intra-zone shares were biased down (Times Sq 0.945 < 0.95); classification now uses Feb-Dec 2025, thresholds untouched, no estimate seen (DECISIONS D9). (2) The ring is entirely boundary zones, so the spec's spillover design is mixed; an outer ring was pre-registered (D10).
+Interview notes: why treated zones come from fee shares; what boundary zones are; why the ring is not clean; why a dense grid is needed for LAG(52); why weeks start Sunday; ST_Touches vs tolerance (same set).
+What's next: Phase 3 (planted-effect simulation) before any real estimate. Needs did.py (the reference estimator) first.
