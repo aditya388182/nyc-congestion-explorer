@@ -20,3 +20,10 @@ Spec 5.2 said "2025 on" which holds. The SQL therefore reads the column only if 
 
 ## D6. MTA toll page blocks curl (Phase 0)
 `mta.info` returns 403 to automated clients. Amounts ($0.75 / $1.50) are cited from the TLC industry notice and MTA page as quoted in search results and confirmed against the modal positive fee values in the January 2025 data. Exact day of the June 2024 pause was not visible in the sources I could read; the memo says "June 2024".
+
+## D7. NULL timestamps and the four exclusion reasons (Phase 1)
+SPEC 5.4 has four reasons and requires raw = kept + dropped with zero unexplained. A row with a NULL pickup time cannot be "inside the month", and one with a NULL dropoff cannot have a 1 min to 4 h duration (a NULL comparison is neither true nor false in SQL, so such a row would silently fall into "kept"). They are assigned to `outside_month` (NULL pickup) and `bad_duration` (NULL dropoff) respectively, after the zone rules, so the reasons stay a complete partition. Boundaries: a trip of exactly 60 s and exactly 4 h is kept (rule says "under 1 minute or over 4 hours"); tested in `tests/test_aggregate.py`.
+
+## D8. Aggregation SQL: `do` is a reserved word; per-file parts (Phase 1)
+Columns normalised to `pz`/`dz` (DuckDB: `do` is a keyword, found when the first run failed with a parser error). SQL stays in `study/sql/normalize.sql` and `aggregate_month.sql` (named blocks, parameters bound with `?`). Six `normalize` variants exist (three types x fee column present/absent) instead of building SQL strings. Each file's aggregates are also saved in `data/agg/parts/` so a crash costs one file; `daily_counts.parquet` and `intra_zone.parquet` are the concatenation.
+Dropoff aggregates are keyed by the dropoff date, so a trip picked up on 31 December and dropped off on 1 January is in the December file's aggregate under the 1 January date; sums over dates are unaffected.

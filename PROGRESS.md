@@ -10,3 +10,18 @@ Check output: `make help` lists 21 targets; `make lint` (ruff, eslint, tsc x2, v
 Probe findings that matter: cbd_congestion_fee absent before 2025 files; negative/NULL/3.00 fee values exist; zone int widths vary by year; shapefile EPSG:2263, 263 zones; latest month 2026-09 for all 3 types (135 files in scope); box is 4 vCPU / 15 GB.
 Interview notes: why Node 24 (Lambda runtime support); why exact pins + lockfiles; why TS 6 (typescript-eslint peer range); why schema probing by Parquet footer range requests.
 What's next: Phase 1 (download.py, aggregate_month.sql, manifest, reconciliation). Run yellow 2025-01 first.
+
+## Phase 1: download, aggregate, manifest, reconciliation: DONE
+Done: `congestion.download` (2 parallel workers, retry with backoff, sha256, per-file manifest row, raw file deleted by the code after aggregation),
+`sql/normalize.sql` + `sql/aggregate_month.sql`, manifest.py, sources.py (data/SOURCE.md), results/reconciliation.json (stamped with commit/dirty/time/command).
+Yellow 2025-01 was run alone first: raw 3,475,226 = kept 3,407,568 + unknown_zone 28,357 + outside_month 22 + bad_duration 39,279; unexplained 0.
+Then all 135 files (Jan 2023 to Sep 2026; the TLC page lists the same 45 months for all three types) in ~5 minutes of wall time (network was fast).
+Check output (from data/manifest.csv; every figure is code output):
+- files 135, all `done`; bytes 24,944,918,471 (24.94 GB)
+- raw rows 1,068,928,934 = kept 1,025,143,226 + null_zone 0 + unknown_zone 40,863,624 + outside_month 2,097 + bad_duration 2,919,987; **unexplained 0 for every file**
+- by type: yellow 161,781,947 raw; green 2,422,443; fhvhv 904,724,544. cbd_congestion_fee column present in 21 files per type (2025-01 on), as probed.
+- data/agg: daily_counts.parquet 5.2 MB (1,771,936 rows) + intra_zone.parquet 87 KB + parts/ (per-file copies); `du -sh data/agg` = 15 MB (< 50 MB, so daily aggregation stays)
+- free disk after: 68 GB (raw dir empty)
+- pytest: 7 passed (exclusion order, boundaries 59 s / 60 s / 4 h, NULL fee/refund, no-fee-column file, manifest upsert)
+Interview notes: why reconcile (a silent filter is the classic DE bug); why NULL timestamps need explicit handling (SQL three-valued logic); why aggregate per file then delete (25 GB through, 15 MB kept); restartable manifest; `do` is a reserved word (the first run failed).
+What's next: Phase 2: zones (intra-zone fee share), fee-jump plot, groups, ring via DuckDB spatial, GeoJSON, panel.sql + fixture test.
