@@ -48,7 +48,7 @@ const f = (v: number | null, fn: (x: number) => string): string => (v === null ?
       ({{ num(planted, "n_seeds") }} seeds): mean bias {{ f(num(planted, "bias_pp"), (x) => x.toFixed(2)) }} percentage points, the 95% CI covered the planted value in
       {{ num(planted, "coverage") }} of {{ num(planted, "coverage_of") }} seeds. With a planted pre-trend the joint lead test rejected in {{ num(planted, "trend_reject_F") }} of {{ num(planted, "n_seeds") }} seeds,
       but with <em>nothing</em> planted it also rejected in {{ num(planted, "null_reject_F") }} of {{ num(planted, "n_seeds") }} seeds
-      (about {{ f(num(sizes, "joint_F"), (x) => (100 * x).toFixed(0)) }}% over {{ num(sizes, "n") }} more seeds): the joint test of 23 leads is over-sized here because only 30 treated zones carry its information.
+      (about {{ f(num(sizes, "joint_F"), (x) => (100 * x).toFixed(0)) }}% over {{ num(sizes, "n") }} more seeds): the joint test of 23 leads is over-sized here because only {{ num(h, "n_treated_zones") }} treated zones carry its information.
       The one-degree-of-freedom slope test rejected {{ f(num(sizes, "slope"), (x) => (100 * x).toFixed(0)) }}% of the time under the null.
       What this does not show: the simulation assumes parallel trends and independent zone errors, so it proves the estimator works when the design is right, not that the design is right.
     </p>

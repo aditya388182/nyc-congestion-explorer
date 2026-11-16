@@ -32,8 +32,8 @@
  },
  "vitest_total": 71,
  "vitest_passed": 71,
- "commit": "7fbb378",
- "dirty": true,
- "generated_at_utc": "2026-11-16T21:21:18+00:00",
+ "commit": "3df4cd0",
+ "dirty": false,
+ "generated_at_utc": "2026-11-16T21:23:33+00:00",
  "command": "python -m congestion.test_report"
 }

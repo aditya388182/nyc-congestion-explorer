@@ -94,9 +94,9 @@ Every scalar in `results/*.json` (flattened by code; the long per-case, per-file
 | `max_rel_diff` | 9.590813568705403e-13 |
 | `worst_case_for_beta` | {"tripType":"ALL","control":"AB","dropBoundary":true,"outcome":"DROPOFFS","excludeZones":[7,33,51,61,129,142,162,213,224,233],"placeboStart":null} |
 | `reference` | results/estimator_reference.json (statsmodels) |
-| `commit` | 7fbb378 |
-| `dirty` | True |
-| `generated_at_utc` | 2026-11-16T21:20:19+00:00 |
+| `commit` | 3df4cd0 |
+| `dirty` | False |
+| `generated_at_utc` | 2026-11-16T21:22:36+00:00 |
 | `command` | npm run -w api test |
 
 ### results/event_study.json
@@ -636,9 +636,9 @@ Every scalar in `results/*.json` (flattened by code; the long per-case, per-file
 | `playwright.exit` | 0 |
 | `vitest_total` | 71 |
 | `vitest_passed` | 71 |
-| `commit` | 7fbb378 |
-| `dirty` | True |
-| `generated_at_utc` | 2026-11-16T21:21:18+00:00 |
+| `commit` | 3df4cd0 |
+| `dirty` | False |
+| `generated_at_utc` | 2026-11-16T21:23:33+00:00 |
 | `command` | python -m congestion.test_report |
 
 ### results/zones.json
@@ -720,7 +720,7 @@ CI jobs kept local: the full download (`make data`, about 25 GB) and the benchma
 
 **Bugs found by running things** (each is an interview story):
 1. The first aggregation run failed: `do` is a reserved word in DuckDB (columns renamed `pz`/`dz`).
-2. January 2025 contains four pre-toll days, so classifying zones by all of 2025's intra-zone fee shares pushed Times Square (0.945) under the fixed 0.95 threshold. The fix was to use February to December; the threshold was not touched, and this was decided before any estimate existed.
+2. January 2025 contains four pre-toll days, so classifying zones by all of 2025's intra-zone fee shares pushed Times Square (see DECISIONS.md for the share) just under the fixed 0.95 threshold. The fix was to use February to December; the threshold was not touched, and this was decided before any estimate existed.
 3. The spillover ring consisted only of boundary zones, making the planned test a mix of partial treatment and spillover; an outer ring was added and pre-registered.
 4. The first simulation run showed the joint lead test rejecting about 60% of the time with nothing planted. The estimator was fine (two implementations agreed to 1e-13); the test is over-sized with few treated clusters. A 1-df slope test was added and both are reported.
 5. `NaN` (zone 264's name "N/A") in `zones.json` crashed the API's JSON parser: fixed at the source and writes now reject NaN.

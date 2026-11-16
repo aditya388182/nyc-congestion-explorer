@@ -7,8 +7,8 @@
  "max_rel_diff": 9.590813568705403e-13,
  "worst_case_for_beta": "{\"tripType\":\"ALL\",\"control\":\"AB\",\"dropBoundary\":true,\"outcome\":\"DROPOFFS\",\"excludeZones\":[7,33,51,61,129,142,162,213,224,233],\"placeboStart\":null}",
  "reference": "results/estimator_reference.json (statsmodels)",
- "commit": "7fbb378",
- "dirty": true,
- "generated_at_utc": "2026-11-16T21:20:19+00:00",
+ "commit": "3df4cd0",
+ "dirty": false,
+ "generated_at_utc": "2026-11-16T21:22:36+00:00",
  "command": "npm run -w api test"
 }

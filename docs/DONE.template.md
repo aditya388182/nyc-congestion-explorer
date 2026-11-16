@@ -85,7 +85,7 @@ CI jobs kept local: the full download (`make data`, about 25 GB) and the benchma
 
 **Bugs found by running things** (each is an interview story):
 1. The first aggregation run failed: `do` is a reserved word in DuckDB (columns renamed `pz`/`dz`).
-2. January 2025 contains four pre-toll days, so classifying zones by all of 2025's intra-zone fee shares pushed Times Square (0.945) under the fixed 0.95 threshold. The fix was to use February to December; the threshold was not touched, and this was decided before any estimate existed.
+2. January 2025 contains four pre-toll days, so classifying zones by all of 2025's intra-zone fee shares pushed Times Square (see DECISIONS.md for the share) just under the fixed 0.95 threshold. The fix was to use February to December; the threshold was not touched, and this was decided before any estimate existed.
 3. The spillover ring consisted only of boundary zones, making the planned test a mix of partial treatment and spillover; an outer ring was added and pre-registered.
 4. The first simulation run showed the joint lead test rejecting about 60% of the time with nothing planted. The estimator was fine (two implementations agreed to 1e-13); the test is over-sized with few treated clusters. A 1-df slope test was added and both are reported.
 5. `NaN` (zone 264's name "N/A") in `zones.json` crashed the API's JSON parser: fixed at the source and writes now reject NaN.

@@ -107,3 +107,6 @@ Check output:
 Notes: the spec's bullet 2 prints "event-study pre-trend test p = 1.1e-186": that is a REJECTION of parallel trends; DONE.md tells the owner to word it that way.
 Interview notes: how the memo number check works and why (a hand-edited number fails the build); why README numbers are generated; what the demo GIF is (real screenshots, not mock-ups).
 What's next: subagent review against SPEC 15 "Done means", fix findings, final commit.
+
+## Subagent review against SPEC 15: DONE
+Independent review ran lint, tests, contract, synth, actionlint and audited all 12 "Done means" items: all hold. Two hand-typed measured values were found and fixed (a treated-zone count in MethodPage.vue; the Times Square share in DONE.md). Remaining known notes: `results/zones.json` and `results/api_latency.json` carry `dirty: true` (generated before their commit; rerun `make study`/`make bench` on a clean tree to refresh); Phase 9 is the owner's (BLOCKERS.md).
