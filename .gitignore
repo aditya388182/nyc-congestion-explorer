@@ -19,3 +19,4 @@ cdk.context.json
 # Secrets
 .env
 *.pem
+web/public/maplibre/

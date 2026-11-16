@@ -1,0 +1,11 @@
+// MapLibre GL 6 runs its tile worker as an ES module that imports a shared chunk by relative path.
+// Vite would hash and separate the two files, breaking that import, so both are served as-is from /maplibre/.
+import { copyFileSync, mkdirSync } from "node:fs";
+import { createRequire } from "node:module";
+import { dirname, join } from "node:path";
+
+const require = createRequire(import.meta.url);
+const dist = join(dirname(require.resolve("maplibre-gl/package.json")), "dist");
+const out = join(import.meta.dirname, "..", "public", "maplibre");
+mkdirSync(out, { recursive: true });
+for (const f of ["maplibre-gl-worker.mjs", "maplibre-gl-shared.mjs"]) copyFileSync(join(dist, f), join(out, f));

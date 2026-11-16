@@ -1,0 +1,71 @@
+query Estimate($input: EstimateInput!) {
+  estimate(input: $input) {
+    beta
+    se
+    effectPct
+    ciLowPct
+    ciHighPct
+    nTreated
+    nControl
+    nWeeks
+    nObs
+    droppedZones
+    cached
+    computeMs
+  }
+}
+
+query EventStudy($tripType: TripType!, $control: ControlGroup!) {
+  eventStudy(tripType: $tripType, control: $control) {
+    nTreated
+    nControl
+    nWeeks
+    nObs
+    points {
+      month
+      effectPct
+      ciLowPct
+      ciHighPct
+    }
+    leadTest {
+      chi2
+      df
+      pChi2
+      f
+      pF
+      slopePerMonthPct
+      slopeP
+    }
+  }
+}
+
+query Tables {
+  placebos {
+    start
+    effectPct
+    ciLowPct
+    ciHighPct
+    nWeeks
+    nObs
+  }
+  specs {
+    id
+    label
+    effectPct
+    ciLowPct
+    ciHighPct
+    nTreated
+    nControl
+    nWeeks
+    nObs
+    droppedZones
+  }
+}
+
+query ZoneNames {
+  zones {
+    id
+    name
+    group
+  }
+}

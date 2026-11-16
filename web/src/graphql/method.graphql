@@ -1,0 +1,38 @@
+query DataMethod {
+  reconciliation {
+    totals {
+      nFiles
+      raw
+      kept
+      nullZone
+      unknownZone
+      outsideMonth
+      badDuration
+      unexplained
+    }
+    files {
+      tripType
+      month
+      raw
+      kept
+      nullZone
+      unknownZone
+      outsideMonth
+      badDuration
+      unexplained
+    }
+  }
+  meta {
+    firstWeek
+    lastWeek
+    nWeeks
+    nZones
+    panelSha256
+    commit
+    generatedAtUtc
+    headline
+    planted
+    spillover
+    exploratory
+  }
+}

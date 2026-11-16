@@ -1,5 +1,5 @@
 {
   "extends": "../tsconfig.base.json",
-  "compilerOptions": { "lib": ["ES2023", "DOM", "DOM.Iterable"], "types": ["vite/client"], "jsx": "preserve" },
+  "compilerOptions": { "lib": ["ES2023", "DOM", "DOM.Iterable"], "types": ["vite/client", "geojson"], "jsx": "preserve" },
   "include": ["src/**/*.ts", "src/**/*.vue", "e2e/**/*.ts", "*.ts"]
 }

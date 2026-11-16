@@ -1,0 +1,32 @@
+query MapShapes {
+  zones {
+    id
+    name
+    borough
+    group
+    ring
+    geometry
+  }
+}
+
+query MapChange($tripType: TripType!, $outcome: Outcome!) {
+  zones {
+    id
+    change(tripType: $tripType, outcome: $outcome)
+  }
+}
+
+query ZoneWeekly($id: Int!, $tripType: TripType!, $outcome: Outcome!) {
+  zone(id: $id) {
+    id
+    name
+    borough
+    group
+    ring
+    change(tripType: $tripType, outcome: $outcome)
+    weekly(tripType: $tripType, outcome: $outcome) {
+      weekStart
+      trips
+    }
+  }
+}
