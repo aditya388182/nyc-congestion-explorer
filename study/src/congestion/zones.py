@@ -248,7 +248,7 @@ def run() -> pd.DataFrame:
     intra["month"] = pd.to_datetime(intra["month"])
     daily = pd.read_parquet(AGG / "daily_counts.parquet")
     daily["date"] = pd.to_datetime(daily["date"])
-    lookup = pd.read_csv(DATA / "zones" / "taxi_zone_lookup.csv")
+    lookup = pd.read_csv(DATA / "zones" / "taxi_zone_lookup.csv", keep_default_na=False)
     z = classify(intra, lookup)
     treated = set(z.loc[z["cls"] == "treated", "id"])
     bad = z[(z["cls"] == "treated") & (z["borough"] != "Manhattan")]
@@ -301,7 +301,7 @@ def run() -> pd.DataFrame:
         ],
         **stamp("python -m congestion.zones"),
     }  # fmt: skip
-    (RESULTS / "zones.json").write_text(json.dumps(out, indent=1))
+    (RESULTS / "zones.json").write_text(json.dumps(out, indent=1, allow_nan=False))
     (REPO / "reports" / "zone_table.md").write_text(table_md(z))
     return z
 

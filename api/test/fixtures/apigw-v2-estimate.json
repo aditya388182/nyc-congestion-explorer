@@ -1,0 +1,30 @@
+{
+  "version": "2.0",
+  "routeKey": "POST /graphql",
+  "rawPath": "/graphql",
+  "rawQueryString": "",
+  "headers": {
+    "accept": "application/json",
+    "content-length": "165",
+    "content-type": "application/json",
+    "host": "abcdef1234.execute-api.us-east-1.amazonaws.com",
+    "user-agent": "vitest-fixture",
+    "x-forwarded-for": "203.0.113.10",
+    "x-forwarded-port": "443",
+    "x-forwarded-proto": "https"
+  },
+  "requestContext": {
+    "accountId": "123456789012",
+    "apiId": "abcdef1234",
+    "domainName": "abcdef1234.execute-api.us-east-1.amazonaws.com",
+    "domainPrefix": "abcdef1234",
+    "http": { "method": "POST", "path": "/graphql", "protocol": "HTTP/1.1", "sourceIp": "203.0.113.10", "userAgent": "vitest-fixture" },
+    "requestId": "fixture-request-id",
+    "routeKey": "POST /graphql",
+    "stage": "$default",
+    "time": "16/Nov/2026:20:00:00 +0000",
+    "timeEpoch": 1794859200000
+  },
+  "body": "{\"query\":\"query($i: EstimateInput!){ estimate(input:$i){ beta effectPct nTreated nControl cached } }\",\"variables\":{\"i\":{\"tripType\":\"ALL\",\"control\":\"AB\",\"dropBoundary\":true,\"outcome\":\"DROPOFFS\"}}}",
+  "isBase64Encoded": false
+}

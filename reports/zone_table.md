@@ -70,8 +70,8 @@
 | 120 | Highbridge Park | Manhattan | 94 | 0.0000 |
 | 199 | Rikers Island | Bronx | 0 |  |
 | 253 | Willets Point | Queens | 54 | 0.0000 |
-| 264 | nan | Unknown | 0 |  |
-| 265 | Outside of NYC | nan | 0 |  |
+| 264 | N/A | Unknown | 0 |  |
+| 265 | Outside of NYC | N/A | 0 |  |
 
 ## Control A (Manhattan, outside) (21)
 

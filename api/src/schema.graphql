@@ -1,0 +1,162 @@
+"""Arbitrary JSON value (zone geometry, precomputed result blobs)."""
+scalar JSON
+
+enum TripType { YELLOW GREEN FHVHV ALL }
+enum ControlGroup { A B AB }
+enum Outcome { DROPOFFS PICKUPS }
+enum ZoneGroup { TREATED BOUNDARY CONTROL_A CONTROL_B OTHER UNCLASSIFIED }
+
+type Query {
+  zones: [Zone!]!
+  zone(id: Int!): Zone
+  estimate(input: EstimateInput!): Estimate!
+  eventStudy(tripType: TripType!, control: ControlGroup!): EventStudy!
+  placebos: [Placebo!]!
+  specs: [Spec!]!
+  reconciliation: Reconciliation!
+  meta: Meta!
+}
+
+type Zone {
+  id: Int!
+  name: String!
+  borough: String!
+  group: ZoneGroup!
+  ring: Boolean!
+  geometry: JSON!
+  "Percent change: mean weekly trips in the first 52 post weeks vs the same 52 weeks a year earlier."
+  change(tripType: TripType!, outcome: Outcome!): Float
+  weekly(tripType: TripType!, outcome: Outcome!): [WeekPoint!]!
+}
+
+type WeekPoint {
+  weekStart: String!
+  trips: Int!
+}
+
+input EstimateInput {
+  tripType: TripType!
+  control: ControlGroup!
+  dropBoundary: Boolean!
+  outcome: Outcome!
+  "At most 20 zone ids; an unknown id is a BAD_USER_INPUT error."
+  excludeZones: [Int!]
+  "ISO date before 2025-01-05; uses pre-2025 weeks only; at least 13 weeks on each side."
+  placeboStart: String
+}
+
+type Estimate {
+  beta: Float!
+  se: Float!
+  effectPct: Float!
+  ciLowPct: Float!
+  ciHighPct: Float!
+  nTreated: Int!
+  nControl: Int!
+  nWeeks: Int!
+  nObs: Int!
+  droppedZones: [Int!]!
+  cached: Boolean!
+  computeMs: Float!
+}
+
+type EventStudyPoint {
+  month: Int!
+  coef: Float!
+  se: Float!
+  effectPct: Float!
+  ciLowPct: Float!
+  ciHighPct: Float!
+}
+
+type LeadTest {
+  chi2: Float!
+  df: Int!
+  pChi2: Float!
+  f: Float!
+  pF: Float!
+  "Supplementary 1-df pre-trend slope test (treated relative to control, % per month)."
+  slopePerMonthPct: Float!
+  slopeP: Float!
+}
+
+type EventStudy {
+  tripType: TripType!
+  control: ControlGroup!
+  nTreated: Int!
+  nControl: Int!
+  nWeeks: Int!
+  nObs: Int!
+  points: [EventStudyPoint!]!
+  leadTest: LeadTest!
+}
+
+type Placebo {
+  start: String!
+  beta: Float!
+  se: Float!
+  effectPct: Float!
+  ciLowPct: Float!
+  ciHighPct: Float!
+  nTreated: Int!
+  nControl: Int!
+  nWeeks: Int!
+  nObs: Int!
+}
+
+type Spec {
+  id: String!
+  label: String!
+  beta: Float!
+  se: Float!
+  effectPct: Float!
+  ciLowPct: Float!
+  ciHighPct: Float!
+  nTreated: Int!
+  nControl: Int!
+  nWeeks: Int!
+  nObs: Int!
+  droppedZones: [Int!]!
+}
+
+type ReconciliationTotals {
+  nFiles: Int!
+  raw: Float!
+  kept: Float!
+  nullZone: Float!
+  unknownZone: Float!
+  outsideMonth: Float!
+  badDuration: Float!
+  unexplained: Float!
+}
+
+type ReconciliationFile {
+  tripType: String!
+  month: String!
+  raw: Float!
+  kept: Float!
+  nullZone: Float!
+  unknownZone: Float!
+  outsideMonth: Float!
+  badDuration: Float!
+  unexplained: Float!
+}
+
+type Reconciliation {
+  totals: ReconciliationTotals!
+  files: [ReconciliationFile!]!
+}
+
+type Meta {
+  firstWeek: String!
+  lastWeek: String!
+  nWeeks: Int!
+  nZones: Int!
+  panelSha256: String!
+  commit: String!
+  generatedAtUtc: String!
+  headline: JSON!
+  planted: JSON!
+  spillover: JSON!
+  exploratory: JSON!
+}

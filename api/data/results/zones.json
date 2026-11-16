@@ -3169,7 +3169,7 @@
   },
   {
    "id": 264,
-   "name": NaN,
+   "name": "N/A",
    "borough": "Unknown",
    "group": "UNCLASSIFIED",
    "ring": false,
@@ -3181,7 +3181,7 @@
   {
    "id": 265,
    "name": "Outside of NYC",
-   "borough": NaN,
+   "borough": "N/A",
    "group": "UNCLASSIFIED",
    "ring": false,
    "ring2": false,
@@ -3190,8 +3190,8 @@
    "intra_fee": 0
   }
  ],
- "commit": "3a32a99",
+ "commit": "83a4446",
  "dirty": true,
- "generated_at_utc": "2026-11-16T20:36:09+00:00",
+ "generated_at_utc": "2026-11-16T20:50:21+00:00",
  "command": "python -m congestion.zones"
 }

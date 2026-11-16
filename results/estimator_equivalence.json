@@ -1,0 +1,14 @@
+{
+ "n_cases": 61,
+ "tolerance_rel": 1e-8,
+ "max_rel_diff_beta": 9.590813568705403e-13,
+ "max_rel_diff_se": 3.198572519726253e-13,
+ "max_rel_diff_effect_pct": 9.097913955621204e-13,
+ "max_rel_diff": 9.590813568705403e-13,
+ "worst_case_for_beta": "{\"tripType\":\"ALL\",\"control\":\"AB\",\"dropBoundary\":true,\"outcome\":\"DROPOFFS\",\"excludeZones\":[7,33,51,61,129,142,162,213,224,233],\"placeboStart\":null}",
+ "reference": "results/estimator_reference.json (statsmodels)",
+ "commit": "83a4446",
+ "dirty": true,
+ "generated_at_utc": "2026-11-16T20:55:33+00:00",
+ "command": "npm run -w api test"
+}

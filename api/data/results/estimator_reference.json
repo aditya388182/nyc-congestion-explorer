@@ -1555,8 +1555,8 @@
   }
  ],
  "reference": "statsmodels OLS, explicit zone and week dummies, cov_type=cluster",
- "commit": "966ffc8",
+ "commit": "83a4446",
  "dirty": true,
- "generated_at_utc": "2026-11-16T20:46:16+00:00",
+ "generated_at_utc": "2026-11-16T20:51:10+00:00",
  "command": "python -m congestion.export"
 }
