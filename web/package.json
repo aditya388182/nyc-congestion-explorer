@@ -40,6 +40,7 @@
     "codegen": "graphql-codegen --config codegen.ts",
     "e2e": "playwright test",
     "screenshots": "SCREENSHOTS=1 playwright test e2e/screenshots.spec.ts",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "demo": "SCREENSHOTS=1 playwright test e2e/demo.spec.ts"
   }
 }

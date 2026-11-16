@@ -45,6 +45,7 @@ source = { editable = "." }
 dependencies = [
     { name = "duckdb" },
     { name = "httpx" },
+    { name = "markdown" },
     { name = "matplotlib" },
     { name = "numpy" },
     { name = "pandas" },
@@ -55,6 +56,7 @@ dependencies = [
 
 [package.dev-dependencies]
 dev = [
+    { name = "pypdf" },
     { name = "pytest" },
     { name = "ruff" },
 ]
@@ -63,6 +65,7 @@ dev = [
 requires-dist = [
     { name = "duckdb", specifier = "==2.0.0" },
     { name = "httpx", specifier = "==0.28.1" },
+    { name = "markdown", specifier = "==3.9" },
     { name = "matplotlib", specifier = "==3.11.2" },
     { name = "numpy", specifier = "==2.5.5" },
     { name = "pandas", specifier = "==3.1.1" },
@@ -73,6 +76,7 @@ requires-dist = [
 
 [package.metadata.requires-dev]
 dev = [
+    { name = "pypdf", specifier = "==6.1.0" },
     { name = "pytest", specifier = "==9.2.0" },
     { name = "ruff", specifier = "==0.17.5" },
 ]
@@ -250,6 +254,15 @@ wheels = [
 ]
 
 [[package]]
+name = "markdown"
+version = "3.9"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/8d/37/02347f6d6d8279247a5837082ebc26fc0d5aaeaf75aa013fcbb433c777ab/markdown-3.9.tar.gz", hash = "sha256:d2900fe1782bd33bdbbd56859defef70c2e78fc46668f8eb9df3128138f2cb6a", size = 364585, upload-time = "2025-09-04T20:25:22.885Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/70/ae/44c4a6a4cbb496d93c6257954260fe3a6e91b7bed2240e5dad2a717f5111/markdown-3.9-py3-none-any.whl", hash = "sha256:9f4d91ed810864ea88a6f32c07ba8bee1346c0cc1f6b1f9f6c822f2a9667d280", size = 107441, upload-time = "2025-09-04T20:25:21.784Z" },
+]
+
+[[package]]
 name = "matplotlib"
 version = "3.11.2"
 source = { registry = "https://pypi.org/simple" }
@@ -409,6 +422,15 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/e4/11/b213bebff182584360cb8d17c72c1677fec5c5c228de439e63bcf8ab1c8f/pyparsing-3.3.3.tar.gz", hash = "sha256:928ae7e20211f3b6f3915a72f06a0cfd29ab9d24279dd6346b6b1a7146397d36", size = 1050487, upload-time = "2026-09-20T20:59:05.609Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/38/bb/d215ee7c73b61497b28a5503f9f53523f294fcc936762b7caf90e0c1c2b5/pyparsing-3.3.3-py3-none-any.whl", hash = "sha256:ece8c00a69cf01b45d0b1dedabb469c90d8caf996d4fda40f147627a122849a4", size = 126420, upload-time = "2026-09-20T20:59:04.025Z" },
+]
+
+[[package]]
+name = "pypdf"
+version = "6.1.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/0b/ac/44d86f16b8ad9b42ea1da4b9aa145be71c89927566d9be87fe74bda1dfef/pypdf-6.1.0.tar.gz", hash = "sha256:0cba440d024da5a2a9304f03cd645346052827b84c5a461c6123e24ed5a3b0b9", size = 5072609, upload-time = "2025-09-21T13:38:39.1Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/07/f3/4939b609cfd374e495450b22a0385ee3f531e9aa40e8812e5c405f030c54/pypdf-6.1.0-py3-none-any.whl", hash = "sha256:6b34e4147df20978bf270af19826692e0485431a9d3944617b9533bc77efb695", size = 322468, upload-time = "2025-09-21T13:38:37.467Z" },
 ]
 
 [[package]]

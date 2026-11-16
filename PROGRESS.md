@@ -97,3 +97,13 @@ Check output:
 Bugs found by running: cdk-nag v3 changed its API (no `NagSuppressions`); wrong managed-policy ID typed from memory in my first test (now read from the CDK constants); CloudFront ignores a minimum TLS version without a custom certificate (warning, removed).
 Interview notes: why CloudFront fronts both site and API (same origin, no CORS); OAC vs OAI; why API Gateway throttling not reserved concurrency; why bundle the panel (cold-start load, no DB); what each cdk-nag acknowledgement means; arm64 and Node 24 choices.
 What's next: Phase 8: memo (2 pages, number-checked), README, demo GIF, make results/readme/bullets, subagent review against SPEC 15, DONE.md.
+
+## Phase 8: memo, README, evidence: DONE (subagent review follows)
+Done: `results.py` (flat `results/summary.json` of every measured value), `memo.py` + `memo_template.md` (reports/memo.md and memo.pdf, 2 pages, copied to web/public/memo.pdf), `test_memo.py` (memo.md equals the rendering of results; every number is from results or design scope; at most 2 pages; honest caveats present), `readme_numbers.py` (README table), `bullets.py`, `demo_gif.py` (docs/demo.gif from real Playwright screenshots), `done.py` (DONE.md generated from `docs/DONE.template.md` and results).
+Check output:
+- `make test`: pytest 31 passed, Vitest 71 passed (api 37, web 21, infra 13), Playwright 22 passed (results/tests.json).
+- Memo check: 4 tests pass (regeneration identical, every number from results or design scope, 2 pages, caveats present).
+- `make bullets`: prints every bullet with numbers from results; the only MISSING is the Phase 9 line (deploy_p95_ms, deploy_n), as intended.
+Notes: the spec's bullet 2 prints "event-study pre-trend test p = 1.1e-186": that is a REJECTION of parallel trends; DONE.md tells the owner to word it that way.
+Interview notes: how the memo number check works and why (a hand-edited number fails the build); why README numbers are generated; what the demo GIF is (real screenshots, not mock-ups).
+What's next: subagent review against SPEC 15 "Done means", fix findings, final commit.

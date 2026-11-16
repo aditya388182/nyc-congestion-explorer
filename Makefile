@@ -77,7 +77,12 @@ deploy: ## FOR THE OWNER ONLY (Phase 9): build the web app, then cdk deploy
 smoke: ## FOR THE OWNER ONLY: make smoke URL=https://...
 	$(UV) python -m congestion.smoke $(URL)
 
+demo: ## Rebuild screenshots and docs/demo.gif from the running app
+	npm run -w web screenshots
+	npm run -w web demo
+	$(UV) python -m congestion.demo_gif
+
 clean: ## Remove build output (not data, not results)
 	git clean -fdX -- api/dist web/dist infra/cdk.out playwright-report test-results
 
-.PHONY: help setup data study export all api-dev web-dev dev test e2e bench contract lint synth infra-test results readme memo bullets deploy smoke clean
+.PHONY: demo help setup data study export all api-dev web-dev dev test e2e bench contract lint synth infra-test results readme memo bullets deploy smoke clean
